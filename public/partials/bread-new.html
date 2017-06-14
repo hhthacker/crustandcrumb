@@ -1,1 +1,12 @@
-<h1>bread new</h1>
+<h1>new bread</h1>
+<form>
+	<div class="form-group">
+	<label>Bread Name</label>
+	<input type="text" class="form-control" placeholder="Some Bread" ng-model="newBread.name"/>
+	</div>
+	<div class="form-group">
+	<label>Description</label>
+	<input type="text" class="form-control" placeholder="Bread Description" ng-model="newBread.description" />
+	</div>
+	<button class="btn btn-default" ng-click="addNewBread()">Add Bread</button>
+</form>
