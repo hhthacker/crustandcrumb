@@ -1,1 +1,1 @@
-var app = angular.module("BreadApp", ["ngAnimate", "ngRoute", "ui.bootstrap", "ngSanitize"]);
+var app = angular.module("BreadApp", ["ngAnimate", "ngRoute", "ngSanitize"]);
