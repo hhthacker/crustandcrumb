@@ -1,36 +1,56 @@
 app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
 
-	let getSingleStep = (id) => {
-		return $q((resolve, reject) => {
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${id}.json`)
-				.then((resultz) => {
-					resultz.data.id = id;
-					resolve(resultz);
-				}).catch((error) => {
-				reject(error);
-				});
-		});
-	};
+    let getRecipeList = (bread_id) => {
+        let stepz = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps.json?orderBy="bread_id"&equalTo="${bread_id}"`)
+                .then((fbSteps) => {
+                    let recipeCollection = fbSteps.data;
+                    if (recipeCollection !== null) {
+                        Object.keys(recipeCollection).forEach((key) => {
+                            recipeCollection[key].id = key;
+                            stepz.push(recipeCollection[key]);
+                        });
+                    }
+                    resolve(stepz);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
 
-	let editStep = (step) => {
-		return $q((resolve, reject) => {
-			$http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${steps.id}.json`,
-				JSON.stringify({
-					name: step.name,
-					details: step.details,
-					duration_minutes: step.duration_minutes,
-					order: step.order,
-					bread_id: step.breadid
-				})
-			).then((resultz) => {
-				resolve(resultz);
-			}).catch((error) => {
-				reject(error);
-			});
-		});
-	};
+    let getSingleStep = (id) => {
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${id}.json`)
+                .then((resultz) => {
+                    resultz.data.id = id;
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+    let editStep = (step) => {
+        return $q((resolve, reject) => {
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${steps.id}.json`,
+                JSON.stringify({
+                    name: step.name,
+                    details: step.details,
+                    duration_minutes: step.duration_minutes,
+                    order: step.order,
+                    bread_id: step.breadid
+                })
+            ).then((resultz) => {
+                resolve(resultz);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
 
 
 
-	return { getSingleStep:getSingleStep, editStep:editStep };
+    return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, editStep: editStep };
 });

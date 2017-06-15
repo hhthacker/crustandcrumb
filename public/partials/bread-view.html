@@ -6,10 +6,21 @@
 
 <h1>Ingredients</h1>
 <div ng-repeat="ingredient in ingredients">
-    <div class="panel panel-default opacity">
+    <div class="panel panel-default opacity col-xs-3">
         <div class="panel-body">
-            <div class="col-xs-7">
-                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.id}}">{{ingredient.name}}</a>
+            <div>
+                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.id}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<h1>Steps</h1>
+<div ng-repeat="step in steps">
+    <div class="panel panel-default opacity col-xs-10">
+        <div class="panel-body">
+            <div>
+                <a ng-href="#!/bread/edit/steps/{{SelectedBread.id}}">{{step.order}} {{step.name}} {{step.details}}</a>
             </div>
         </div>
     </div>
