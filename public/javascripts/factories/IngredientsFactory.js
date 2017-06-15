@@ -1,5 +1,25 @@
 app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
 
+	let getIngredientList = (bread_id) => {
+		let ingredientz = [];
+		return $q((resolve, reject) => {
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/ingredients.json?orderBy="bread_id"&equalTo="${bread_id}"`)
+				.then((fbIngredients) => {
+					let ingredientsCollection = fbIngredients.data;
+			if(ingredientsCollection !== null ) {
+				Object.keys(ingredientsCollection).forEach((key) => {
+					ingredientsCollection[key].id = key;
+					ingredientz.push(ingredientsCollection[key]);
+				});
+			}
+			resolve(ingredientz);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
+	};
+
 	let postNewIngredient = (newIngredient) => {
 		return $q((resolve, reject) => {
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/ingredients.json`, JSON.stringify(newIngredient))
@@ -29,5 +49,5 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
 	};
 
 
-	return { postNewIngredient:postNewIngredient, editIngredient:editIngredient };
+	return { getIngredientList:getIngredientList, postNewIngredient:postNewIngredient, editIngredient:editIngredient };
 });
