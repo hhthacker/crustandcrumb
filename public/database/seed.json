@@ -1,190 +1,212 @@
 {
     "bread": {
         "bread0": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "french country sourdough",
             "description": "flagship bread",
             "by_loaf": false
         },
         "bread1": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "baguette",
             "description": "oui oui put butter on me",
             "by_loaf": false
         },
         "bread2": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "oatmeal loaf",
             "description": "goat-free oatmeal loaf",
             "by_loaf": true
         },
         "bread3": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "rye raisin loaf",
             "description": "rye not have some for breakfast? no raisin to pass this bread up!",
             "by_loaf": true
         },
         "bread4": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "rye sandwich loaf",
             "description": "just the right amount of carraway for this break to carry you away!",
             "by_loaf": true
         },
         "bread5": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "white sourdough",
             "description": "it's rectangular, it's classic.",
             "by_loaf": true
         },
         "bread6": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "brioche",
             "description": "let them eat cake!",
             "by_loaf": false
         },
         "bread7": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
             "name": "croissant",
             "description": "heading to the lamination station",
             "by_loaf": true
-        },
+        }
 
     },
     "ingredients": {
         "ingredients0": {
             "name": "HG flour",
-            "amount": "0.5200",
+            "amount": 0.5200,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients1": {
             "name": "levain",
-            "amount": "0.0600",
+            "amount": 0.0600,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients2": {
             "name": "water 1",
-            "amount": "0.3600",
+            "amount": 0.3600,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients3": {
             "name": "yeast",
-            "amount": "0.0010",
+            "amount": 0.0010,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients4": {
             "name": "salt",
-            "amount": "0.0100",
+            "amount": 0.0100,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients5": {
             "name": "water 2",
-            "amount": "0.0500",
+            "amount": 0.0500,
             "unit": "kg",
             "bread_id": "bread1"
         },
         "ingredients6": {
             "name": "Levain",
-            "amount": "0.3800",
+            "amount": 0.3800,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients7": {
             "name": "water 1",
-            "amount": "0.9500",
+            "amount": 0.9500,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients8": {
             "name": "AP flour",
-            "amount": "1.3500",
+            "amount": 1.3500,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients9": {
             "name": "WW flour",
-            "amount": "0.1500",
+            "amount": 0.1500,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients10": {
             "name": "salt",
-            "amount": "0.0300",
+            "amount": 0.0300,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients11": {
             "name": "water 2",
-            "amount": "0.1500",
+            "amount": 0.1500,
             "unit": "kg",
             "bread_id": "bread0"
         },
         "ingredients12": {
             "name": "pate fermentee",
-            "amount": "0.0800",
+            "amount": 0.0800,
             "unit": "kg",
             "bread_id": "bread0"
-        },
+        }
     },
     "steps": {
-    	"step0": {
-    		"name": "scale ingredients",
-    		"details": "flour, levain, water 1",
-    		"duration_minutes": "15",
-    		"order": "1",
-    		"bread_id": "baguette"
-    	},
-    	"step1": {
-    		"name": "mix ingredients",
-    		"details": "mix until evenly hydrated flour",
-    		"duration_minutes": "10",
-    		"order": "2",
-    		"bread_id": "baguette"
-    	},
-    	"step2": {
-    		"name": "autolyse",
-    		"details": "flour, levain, water 1",
-    		"duration_minutes": "17",
-    		"order": "3",
-    		"bread_id": "baguette"
-    	},
-    	"step3": {
-    		"name": "add salt water",
-    		"details": "water 2 and salt",
-    		"duration_minutes": "5",
-    		"order": "4",
-    		"bread_id": "baguette"
-    	},
-    	"step4": {
-    		"name": "first turn",
-    		"details": "stretch and fold",
-    		"duration_minutes": "5",
-    		"order": "5",
-    		"bread_id": "baguette"
-    	},
-    	"step5": {
-    		"name": "rest and second turn",
-    		"details": "stretch and fold, evenly distribute remaining salt water puddles",
-    		"duration_minutes": 25,
-    		"order": 6,
-    		"bread_id": "baguette"
-    	},
-    	"step6": {
-    		"name": "move to bins",
-    		"details": "transfer dough to bins with 12-15kg each, retard",
-    		"duration_minutes": "25",
-    		"order": "7",
-    		"bread_id": "baguette"
-    	},
-    	"step7": {
-    		"name": "fold in the cold",
-    		"details": "stretch and fold, smoothing out lumps",
-    		"duration_minutes": "15",
-    		"order": "8",
-    		"bread_id": "baguette"
-    	},
-		"step8": {
-    		"name": "divide dough",
-    		"details": "divde into 0.4kg pieces, preshaped and retard until needed to shape",
-    		"duration_minutes": "25",
-    		"order": "9",
-    		"bread_id": "baguette"
-    	}
+        "step0": {
+            "name": "scale ingredients",
+            "details": "flour, levain, water 1",
+            "duration_minutes": 15,
+            "order": 1,
+            "bread_id": "bread1"
+        },
+        "step1": {
+            "name": "mix ingredients",
+            "details": "mix until evenly hydrated flour",
+            "duration_minutes": 10,
+            "order": 2,
+            "bread_id": "bread1"
+        },
+        "step2": {
+            "name": "autolyse",
+            "details": "flour, levain, water 1",
+            "duration_minutes": 17,
+            "order": 3,
+            "bread_id": "bread1"
+        },
+        "step3": {
+            "name": "add salt water",
+            "details": "water 2 and salt",
+            "duration_minutes": 5,
+            "order": 4,
+            "bread_id": "bread1"
+        },
+        "step4": {
+            "name": "first turn",
+            "details": "stretch and fold",
+            "duration_minutes": 5,
+            "order": 5,
+            "bread_id": "bread1"
+        },
+        "step5": {
+            "name": "rest and second turn",
+            "details": "stretch and fold, evenly distribute remaining salt water puddles",
+            "duration_minutes": 25,
+            "order": 6,
+            "bread_id": "bread1"
+        },
+        "step6": {
+            "name": "move to bins",
+            "details": "transfer dough to bins with 12-15kg each, retard",
+            "duration_minutes": 25,
+            "order": 7,
+            "bread_id": "bread1"
+        },
+        "step7": {
+            "name": "fold in the cold",
+            "details": "stretch and fold, smoothing out lumps",
+            "duration_minutes": 15,
+            "order": 8,
+            "bread_id": "bread1"
+        },
+        "step8": {
+            "name": "divide dough",
+            "details": "divde into 0.4kg pieces, preshaped and retard until needed to shape",
+            "duration_minutes": 25,
+            "order": 9,
+            "bread_id": "bread1"
+        }
+    },
+    "users": {
+        "user1": {
+            "uid": "YFMPPpu57aOc03FUMSacOvsUYUr1",
+            "name": "apple"
+        },
+        "user2": {
+            "uid": "yr7suPywxUXljhtGOVCM71vMyIb2",
+            "name": "baby"
+        },
+        "user3": {
+            "uid": "FzZNfFpTotYVZ6YIKcicIlMNZm62",
+            "name": "candy"
+        }
     }
 }

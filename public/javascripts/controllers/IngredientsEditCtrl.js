@@ -1,4 +1,5 @@
 app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, IngredientsFactory){
+
 	$scope.newIngredient = {};
 
 	IngredientsFactory.getSingleIngredient($routeParams.id).then((results) => {
