@@ -8,7 +8,7 @@
     <div class="panel panel-default opacity col-xs-3">
         <div class="panel-body">
             <div>
-                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.breadid}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
+                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.breadid}}/{{SelectedIngredient.ingredientid}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="panel panel-default opacity col-xs-10">
         <div class="panel-body">
             <div>
-                <a ng-href="#!/bread/edit/steps/{{SelectedBread.breadid}}">{{step.order}} {{step.name}} {{step.details}}</a>
+                <a ng-href="#!/bread/edit/recipe/{{SelectedBread.breadid}}/{{SelectedStep.recipeid}}">{{step.order}} {{step.name}} {{step.details}}</a>
             </div>
         </div>
     </div>

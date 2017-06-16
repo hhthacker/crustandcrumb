@@ -1,0 +1,27 @@
+<h1>Add Ingredient</h1>
+<form>
+    <div class="form-group">
+        <label>Ingredient Name</label>
+        <input type="text" class="form-control" placeholder="Ingredient Name" ng-model="newIngredient.name" />
+    </div>
+    <div class="form-group">
+        <label>Amount</label>
+        <input type="number" class="form-control" placeholder="Amount" ng-model="newIngredient.amount" />
+    </div>
+    <div class="form-group">
+        <label>Unit</label>
+        <input type="text" class="form-control" placeholder="Unit" ng-model="newIngredient.unit" />
+    </div>
+    <button class="btn btn-default" ng-click="addNewIngredient(newIngredient.breadid)">Save Step</button>
+</form>
+
+<h1>Ingredients List</h1>
+<div ng-repeat="ingredient in ingredients">
+    <div class="panel panel-default opacity col-xs-3">
+        <div class="panel-body">
+            <div>
+                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.breadid}}/{{SelectedIngredient.ingredientid}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>
