@@ -45,7 +45,7 @@ app.factory("BreadFactory", function($http, $q, FIREBASE_CONFIG) {
 
 	let deleteBread = (bread) => {
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/bread/${bread.id}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/bread/${breadid}.json`)
 			.then((resultz) => {
 				resolve(resultz);
 			}).catch((error) => {
@@ -56,11 +56,13 @@ app.factory("BreadFactory", function($http, $q, FIREBASE_CONFIG) {
 
 	let editBread = (bread) => {
 		return $q((resolve, reject) => {
-			$http.put(`${FIREBASE_CONFIG.databaseURL}/bread/${bread.id}.json`,
+			console.log("edit bread", bread);
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/bread/${bread.breadid}.json`,
 				JSON.stringify({
 					name: bread.name,
 					description: bread.description,
-					by_loaf: item.false,
+					uid: bread.uid,
+					by_loaf: false,
 				})
 			).then((resultz) => {
 				resolve(resultz);
