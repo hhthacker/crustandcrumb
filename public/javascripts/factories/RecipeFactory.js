@@ -34,7 +34,7 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
 
     let editStep = (step) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${step.id}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${step.stepid}.json`,
                 JSON.stringify({
                     name: step.name,
                     details: step.details,
