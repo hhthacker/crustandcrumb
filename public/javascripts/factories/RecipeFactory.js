@@ -20,11 +20,11 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let getSingleStep = (id) => {
+    let getSingleStep = (recipeid) => {
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${id}.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${recipeid}.json`)
                 .then((resultz) => {
-                    resultz.data.id = id;
+                    resultz.data.recipeid = recipeid;
                     resolve(resultz);
                 }).catch((error) => {
                     reject(error);

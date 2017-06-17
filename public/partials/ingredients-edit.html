@@ -13,7 +13,7 @@
         <input type="text" class="form-control" placeholder="Unit" ng-model="newIngredient.unit" />
     </div>
     <button class="btn btn-default" ng-click="addNewIngredient(newIngredient.bread_id)">Save Step</button>
-    <button class="btn btn-default" ng-click="deleteIngredient(newIngredient.bread_id)">Delete Step</button>
+    <button class="btn btn-default" ng-click="deleteOneIngredient(newIngredient.id)">Delete Step</button>
 </form>
 
 <h1>Ingredients List</h1>
@@ -21,7 +21,7 @@
     <div class="panel panel-default opacity col-xs-3">
         <div class="panel-body">
             <div>
-                <a ng-href="#!/bread/edit/ingredients/{{SelectedBread.breadid}}/{{SelectedIngredient.ingredientid}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
+                <a ng-href="#!/bread/{{newIngredient.bread_id}}/ingredients/{{ingredient.id}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
             </div>
         </div>
     </div>

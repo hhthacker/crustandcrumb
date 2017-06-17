@@ -61,9 +61,9 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let deleteIngredient = (ingredient) => {
+    let deleteIngredient = (ingredientid) => {
         return $q((resolve, reject) => {
-            $http.delete(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredient.id}.json`)
+            $http.delete(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredientid}.json`)
                 .then((resultz) => {
                     resolve(resultz);
                 })
