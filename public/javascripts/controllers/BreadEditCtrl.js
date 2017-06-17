@@ -16,6 +16,14 @@ app.controller("BreadEditCtrl", function($location, $routeParams, $scope, BreadF
 		});
 	};
 
+	$scope.deleteWholeLoaf = (bread) => {
+		BreadFactory.deleteBread(bread).then(() => {
+			console.log("bread ctrl", bread);
+			$location.url(`/bread/list`);
+		}).catch((error) => {
+			console.log("deleteBread", error);
+		});
+	};
 
 
 
