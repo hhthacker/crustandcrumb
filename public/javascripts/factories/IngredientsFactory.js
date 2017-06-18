@@ -46,7 +46,7 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
 
     let editIngredient = (ingredient) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredient.ingredientid}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredient.id}.json`,
                 JSON.stringify({
                     name: ingredient.name,
                     amount: ingredient.amount,

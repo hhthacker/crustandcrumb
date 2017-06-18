@@ -10,8 +10,10 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
     });
 
     $scope.addNewIngredient = (id) => {
-        IngredientsFactory.editIngredient($scope.newIngredient).then(() => {
-            $location.url(`/bread/view/${id}`);
+        $scope.newIngredient.bread_id = $routeParams.breadid;
+        console.log("new ingredient", $scope.newIngredient);
+        IngredientsFactory.postNewIngredient($scope.newIngredient).then(() => {
+            $location.url(`/bread/view/${$scope.newIngredient.bread_id}`);
         }).catch((error) => {
             console.log("editIngredient", error);
         });
@@ -26,9 +28,9 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
         });
     };
 
-    $scope.deleteOneIngredient = (id) => {
-        IngredientsFactory.deleteIngredient(id).then(() => {
-            console.log("delete ingredient ctrl", id);
+    $scope.deleteOneIngredient = () => {
+        IngredientsFactory.deleteIngredient($routeParams.ingredientid).then(() => {
+            console.log("delete ingredient ctrl", $routeParams.ingredientid);
             $location.url(`/bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("delete one ingredient", error);
