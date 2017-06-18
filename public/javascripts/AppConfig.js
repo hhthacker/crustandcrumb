@@ -63,12 +63,22 @@ app.config(function($routeProvider) {
       controller: 'BreadEditCtrl',
       resolve: {isAuth}
     })
-    .when('/bread/edit/ingredients/:breadid/:ingredientid', {
+    .when('/bread/:breadid/ingredients/:ingredientid', {
       templateUrl: 'partials/ingredients-edit.html',
       controller: 'IngredientsEditCtrl',
       resolve: {isAuth}
     })
-    .when('/bread/edit/recipe/:breadid/:recipeid', {
+    .when('/bread/:breadid/ingredients/new', {
+      templateUrl: 'partials/ingredients-edit.html',
+      controller: 'IngredientsEditCtrl',
+      resolve: {isAuth}
+    })
+    .when('/bread/:breadid/recipe/:recipeid', {
+      templateUrl: 'partials/recipe-edit.html',
+      controller: 'RecipeEditCtrl',
+      resolve: {isAuth}
+    })
+    .when('/bread/:breadid/recipe/new', {
       templateUrl: 'partials/recipe-edit.html',
       controller: 'RecipeEditCtrl',
       resolve: {isAuth}

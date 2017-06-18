@@ -20,11 +20,11 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let getSingleStep = (id) => {
+    let getSingleStep = (recipeid) => {
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${id}.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${recipeid}.json`)
                 .then((resultz) => {
-                    resultz.data.id = id;
+                    resultz.data.recipeid = recipeid;
                     resolve(resultz);
                 }).catch((error) => {
                     reject(error);
@@ -34,7 +34,7 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
 
     let editStep = (step) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${steps.id}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${step.stepid}.json`,
                 JSON.stringify({
                     name: step.name,
                     details: step.details,
@@ -50,7 +50,19 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
+    let deleteStep = (step) => {
+        return $q((resolve, reject) => {
+            $http.delete(`${FIREBASE_CONFIG.databaseURL}/steps/${step.id}.json`)
+            .then((resultz) => {
+                resolve(resultz);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    };
 
 
-    return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, editStep: editStep };
+
+    return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, editStep: editStep, deleteStep: deleteStep };
 });

@@ -16,7 +16,8 @@
         <label>Order in Recipe</label>
         <input type="number" class="form-control" placeholder="Order in Recipe" ng-model="newStep.order" />
     </div>
-    <button class="btn btn-default" ng-click="addNewStep(newStep.breadid)">Save Step</button>
+    <button class="btn btn-default" ng-click="addNewStep(newStep.bread_id)">Save Step</button>
+    <button class="btn btn-default" ng-click="deleteOneStep(newStep.id)">Delete Step</button>
 </form>
 
 <h1>Recipe</h1>
@@ -24,7 +25,7 @@
     <div class="panel panel-default opacity col-xs-10">
         <div class="panel-body">
             <div>
-                <a ng-href="#!/bread/edit/recipe/{{SelectedBread.breadid}}/{{SelectedStep.recipeid}}">{{step.order}} {{step.name}} {{step.details}}</a>
+                <a ng-href="#!/bread/{{SelectedBread.breadid}}/recipe/{{SelectedStep.recipeid}}">{{step.order}} {{step.name}} {{step.details}}</a>
             </div>
         </div>
     </div>
