@@ -32,15 +32,26 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
+    let postNewStep = (newStep) => {
+        return $q((resolve, reject) => {
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/steps.json`, JSON.stringify(newStep))
+                .then((resultz) => {
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
     let editStep = (step) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${step.stepid}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/steps/${step.id}.json`,
                 JSON.stringify({
                     name: step.name,
                     details: step.details,
                     duration_minutes: step.duration_minutes,
                     order: step.order,
-                    bread_id: step.breadid
+                    bread_id: step.bread_id
                 })
             ).then((resultz) => {
                 resolve(resultz);
@@ -50,9 +61,9 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let deleteStep = (step) => {
+    let deleteStep = (recipeid) => {
         return $q((resolve, reject) => {
-            $http.delete(`${FIREBASE_CONFIG.databaseURL}/steps/${step.id}.json`)
+            $http.delete(`${FIREBASE_CONFIG.databaseURL}/steps/${recipeid}.json`)
             .then((resultz) => {
                 resolve(resultz);
             })
@@ -62,7 +73,5 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-
-
-    return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, editStep: editStep, deleteStep: deleteStep };
+    return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, postNewStep: postNewStep, editStep: editStep, deleteStep: deleteStep };
 });

@@ -1,37 +1,41 @@
 app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, RecipeFactory) {
 	$scope.newStep = {};
 
-	RecipeFactory.getSingleStep($routeParams.id).then((results) => {
-		console.log("results", results);
+	RecipeFactory.getSingleStep($routeParams.recipeid).then((results) => {
+		console.log("get single step results", results);
 		$scope.newStep = results.data;
 	}).catch((error) => {
 		console.log("getSingleStep", error);
 	});
 
-	$scope.addNewStep = (id) => {
-		RecipeFactory.editStep($scope.newStep).then(() => {
-			$location.url(`/recipe/${id}`);
-		}).catch((error) => {
-			console.log("editStep", error);
-		});
-	};
-
 	$scope.saveStepEdit = (id) => {
 		RecipeFactory.editStep($scope.newStep).then(() => {
 			console.log("edit step", $scope.newStep);
-			$location.url(`/steps/${id}`);
+			$location.url(`bread/${routeParams.breadid}/recipe/${id}`);
 		}).catch((error) => {
 			console.log("edit step", error);
 		});
 	};
 
-	$scope.deleteOneStep = (id) => {
-		RecipeFactory.deleteStep(id).then(() => {
-			console.log("delete step ctrl", id);
-			$location.url(`/bread/view/${id}`);
+	$scope.deleteOneStep = () => {
+		RecipeFactory.deleteStep($routeParams.recipeid).then(() => {
+			console.log("delete step ctrl", $routeParams.recipeid);
+			$location.url(`/bread/view/${$routeParams.recipeid}`);
 		}).catch((error) => {
 			console.log("delete one step", error);
 		});
 	};
+
+	$scope.selectedStep = {};
+	$scope.recipe = [];
+	let getRecipe = () => {
+		RecipeFactory.getRecipeList($routeParams.recipeid).then((receipt) => {
+			$scope.recipe = receipt;
+			console.log("recipe", $scope.recipe);
+		}).catch((error) => {
+			console.log("get error", error);
+		});
+	};
+	getRecipe();
 
 });
