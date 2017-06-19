@@ -1,12 +1,11 @@
 app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, IngredientsFactory) {
 
-
-    IngredientsFactory.getSingleIngredient($routeParams.ingredientid).then((results) => {
-        console.log("get single step results", results);
-        $scope.newIngredient = results.data;
-    }).catch((error) => {
-        console.log("getSingleIngredient", error);
-    });
+        IngredientsFactory.getSingleIngredient($routeParams.ingredientid).then((results) => {
+            console.log("get single step results", results);
+            $scope.newIngredient = results.data;
+        }).catch((error) => {
+            console.log("getSingleIngredient", error);
+        });
 
     $scope.saveIngredientEdit = (id) => {
         IngredientsFactory.editIngredient($scope.newBread).then(() => {

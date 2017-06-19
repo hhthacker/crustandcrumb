@@ -20,9 +20,9 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let getSingleIngredient = (ingredientid) => {
+    let getSingleIngredient = (id) => {
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredientid}.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/ingredients/${id}.json`)
                 .then((resultz) => {
                     console.log("getsingleingredient", resultz);
                     resultz.data.ingredientid = ingredientid;
