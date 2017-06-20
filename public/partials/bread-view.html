@@ -1,15 +1,20 @@
 <h2>Bread: {{selectedBread.name}}</h2>
 <button class="btn btn-danger"><a ng-href="#!/bread/edit/{{selectedBread.breadid}}">Edit {{selectedBread.name}}</a></button>
-<h3>Scale by {{selectedBread.by_loaf}}</h3>
-<h3>Description: {{selectedBread.description}}</h3>
+<h3 ng-show="!selectedBread.by_loaf">Recipe scaled by kilograms</h3>
+<h3 ng-show="selectedBread.by_loaf">Recipe scaled by loaf</h3>
 
+<h3>Description: {{selectedBread.description}}</h3>
 <h1>Ingredients</h1>
 <button class="btn btn-warning"><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/new">Add New Ingredient</a></button>
+<div>
+    <input type="number" class="form-control" placeholder="1" ng-model="multiplyFactor" />
+</div>
 <div ng-repeat="ingredient in ingredients">
     <div class="panel panel-default opacity col-xs-3">
         <div class="panel-body">
             <div>
-                <a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.amount}} {{ingredient.unit}} {{ingredient.name}}</a>
+                <div>{{ingredient.amount * (multiplyFactor || 1) | number:3}} {{ingredient.unit}} </div>
+                <a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
             </div>
         </div>
     </div>
