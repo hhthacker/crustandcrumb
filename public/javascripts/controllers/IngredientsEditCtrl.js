@@ -4,7 +4,7 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
     $scope.editMode = true;
 
     IngredientsFactory.getSingleIngredient($routeParams.ingredientid).then((results) => {
-        console.log("results", results);
+        console.log("get single step results", results);
         $scope.newIngredient = results.data;
     }).catch((error) => {
         console.log("getSingleIngredient", error);

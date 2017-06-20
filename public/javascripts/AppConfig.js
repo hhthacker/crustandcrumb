@@ -70,7 +70,7 @@ app.config(function($routeProvider) {
     })
     .when('/bread/:breadid/ingredients/:ingredientid', {
       templateUrl: 'partials/ingredients-edit.html',
-      controller: 'IngredientsEditCtrl',
+      controller: 'IngredientsAddCtrl',
       resolve: {isAuth}
     })
       .when('/bread/:breadid/recipe/new', {
@@ -80,7 +80,7 @@ app.config(function($routeProvider) {
     })
     .when('/bread/:breadid/recipe/:recipeid', {
       templateUrl: 'partials/recipe-edit.html',
-      controller: 'RecipeEditCtrl',
+      controller: 'RecipeAddCtrl',
       resolve: {isAuth}
     })
 

@@ -61,9 +61,9 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let deleteStep = (step) => {
+    let deleteStep = (recipeid) => {
         return $q((resolve, reject) => {
-            $http.delete(`${FIREBASE_CONFIG.databaseURL}/steps/${step.id}.json`)
+            $http.delete(`${FIREBASE_CONFIG.databaseURL}/steps/${recipeid}.json`)
             .then((resultz) => {
                 resolve(resultz);
             })
@@ -72,8 +72,6 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
             });
         });
     };
-
-
 
     return { getRecipeList:getRecipeList, getSingleStep: getSingleStep, postNewStep: postNewStep, editStep: editStep, deleteStep: deleteStep };
 });

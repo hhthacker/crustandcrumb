@@ -1,4 +1,4 @@
-app.controller("BreadViewCtrl", function($routeParams, $rootScope, $scope, BreadFactory, IngredientsFactory, RecipeFactory) {
+app.controller("BreadViewCtrl", function($routeParams, $location, $rootScope, $scope, BreadFactory, IngredientsFactory, RecipeFactory) {
     $scope.selectedBread = {};
 
     BreadFactory.getSingleBread($routeParams.breadid).then((results) => {
@@ -18,6 +18,18 @@ app.controller("BreadViewCtrl", function($routeParams, $rootScope, $scope, Bread
         });
     };
     getIngredients();
+
+    $scope.newIngredient = {};
+    $scope.addNewIngredient = () => {
+        $scope.newIngredient.bread_id = $routeParams.breadid;
+        console.log("new ingredient", $scope.newIngredient);
+        IngredientsFactory.postNewIngredient($scope.newIngredient).then(() => {
+            $location.url(`/bread/view/${$scope.newIngredient.bread_id}`);
+        }).catch((error) => {
+            console.log("editIngredient", error);
+        });
+    };
+
 
     $scope.selectedStep = {};
     $scope.steps = [];

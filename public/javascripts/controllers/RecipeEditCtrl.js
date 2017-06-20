@@ -37,6 +37,7 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
 			console.log("get error", error);
 		});
 	};
+
 	getSteps();
 
 });
