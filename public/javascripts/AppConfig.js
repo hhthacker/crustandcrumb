@@ -75,7 +75,7 @@ app.config(function($routeProvider) {
     })
       .when('/bread/:breadid/recipe/new', {
       templateUrl: 'partials/recipe-edit.html',
-      controller: 'RecipeEditCtrl',
+      controller: 'RecipeAddCtrl',
       resolve: {isAuth}
     })
     .when('/bread/:breadid/recipe/:recipeid', {
