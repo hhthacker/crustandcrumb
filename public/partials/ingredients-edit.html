@@ -12,8 +12,9 @@
         <label>Unit</label>
         <input type="text" class="form-control" placeholder="Unit" ng-model="newIngredient.unit" />
     </div>
-    <button class="btn btn-default" ng-click="addNewIngredient(newIngredient.bread_id)">Save Step</button>
-    <button class="btn btn-default" ng-click="deleteOneIngredient(ingredient.id)">Delete Step</button>
+    <button class="btn btn-default" ng-click="saveIngredientEdit(newIngredient.id)" ng-show="editMode">Save Step</button>
+    <button class="btn btn-default" ng-click="addNewIngredient(newIngredient.bread_id)" ng-hide="editMode">Save Step</button>
+    <button class="btn btn-default" ng-click="deleteOneIngredient(newIngredient.id)" ng-show="editMode">Delete Step</button>
 </form>
 
 <h1>Ingredients List</h1>

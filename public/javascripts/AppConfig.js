@@ -63,14 +63,19 @@ app.config(function($routeProvider) {
       controller: 'BreadEditCtrl',
       resolve: {isAuth}
     })
+    .when('/bread/:breadid/ingredients/new', {
+      templateUrl: 'partials/ingredients-edit.html',
+      controller: 'IngredientsAddCtrl',
+      resolve: {isAuth}
+    })
     .when('/bread/:breadid/ingredients/:ingredientid', {
       templateUrl: 'partials/ingredients-edit.html',
       controller: 'IngredientsEditCtrl',
       resolve: {isAuth}
     })
-    .when('/bread/:breadid/ingredients/new', {
-      templateUrl: 'partials/ingredients-edit.html',
-      controller: 'IngredientsEditCtrl',
+      .when('/bread/:breadid/recipe/new', {
+      templateUrl: 'partials/recipe-edit.html',
+      controller: 'RecipeEditCtrl',
       resolve: {isAuth}
     })
     .when('/bread/:breadid/recipe/:recipeid', {
@@ -78,15 +83,11 @@ app.config(function($routeProvider) {
       controller: 'RecipeEditCtrl',
       resolve: {isAuth}
     })
-    .when('/bread/:breadid/recipe/new', {
-      templateUrl: 'partials/recipe-edit.html',
-      controller: 'RecipeEditCtrl',
-      resolve: {isAuth}
-    })
+
     .when('/logout', {
       templateUrl: 'partials/auth.html',
       controller: 'AuthCtrl',
       resolve: {isAuth}
     })
-    .otherwise('/auth');
+     .otherwise('/auth');
 });

@@ -1,8 +1,8 @@
 app.constant("FIREBASE_CONFIG", {
-    apiKey: "AIzaSyCzJDZ4_RHGIySohU-UOaG1vAFX574IG_g",
-    authDomain: "crustandcrumb-99bb4.firebaseapp.com",
-    databaseURL: "https://crustandcrumb-99bb4.firebaseio.com",
-    projectId: "crustandcrumb-99bb4",
-    storageBucket: "crustandcrumb-99bb4.appspot.com",
-    messagingSenderId: "321163254888"
+    apiKey: "AIzaSyCulIeEFJpnBYrVCZ_YHiPSkzv_BKIHjNI",
+    authDomain: "bread-d6bfb.firebaseapp.com",
+    databaseURL: "https://bread-d6bfb.firebaseio.com",
+    projectId: "bread-d6bfb",
+    storageBucket: "bread-d6bfb.appspot.com",
+    messagingSenderId: "19131201198"
 });

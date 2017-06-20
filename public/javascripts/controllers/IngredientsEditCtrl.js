@@ -1,6 +1,7 @@
 app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, IngredientsFactory) {
 
     $scope.newIngredient = {};
+    $scope.editMode = true;
 
     IngredientsFactory.getSingleIngredient($routeParams.ingredientid).then((results) => {
         console.log("results", results);
@@ -9,20 +10,10 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
         console.log("getSingleIngredient", error);
     });
 
-    $scope.addNewIngredient = (id) => {
-        $scope.newIngredient.bread_id = $routeParams.breadid;
-        console.log("new ingredient", $scope.newIngredient);
-        IngredientsFactory.postNewIngredient($scope.newIngredient).then(() => {
-            $location.url(`/bread/view/${$scope.newIngredient.bread_id}`);
-        }).catch((error) => {
-            console.log("editIngredient", error);
-        });
-    };
-
     $scope.saveIngredientEdit = (id) => {
-        IngredientsFactory.editIngredient($scope.newBread).then(() => {
+        IngredientsFactory.editIngredient($scope.newIngredient).then(() => {
             console.log("new ingredient", $scope.newIngredient);
-            $location.url(`bread/${$routeParams.breadid}/ingredients/${id}`);
+            $location.url(`bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("edit ingredient", error);
         });
