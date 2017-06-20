@@ -18,16 +18,17 @@
 </div>
 </div>
 <br>
+
 <h1>Recipe</h1>
 <button class="btn btn-warning"><a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/new">Add New Step</a></button>
 <div class="container left" id="drag-elements">
-<div ng-repeat="step in steps | orderBy:'order'">
-    <div class="panel panel-default opacity col-xs-4">
-        <div class="panel-body">
-            <div>
-                <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">{{step.order}} {{step.name}} {{step.details}}</a>
+    <div ng-repeat="step in steps | orderBy:'order'">
+        <div class="panel panel-default opacity col-xs-4">
+            <div class="panel-body">
+                <div>
+                    <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">{{step.order}} {{step.name}} {{step.details}}</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
