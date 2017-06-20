@@ -18,7 +18,6 @@
     "matchdep": "^1.0.1"
   },
   "dependencies": {
-    "angularjs-dragula": "^1.2.8",
-    "dragula": "^3.7.2"
+    "angularjs-dragula": "^1.2.8"
   }
 }

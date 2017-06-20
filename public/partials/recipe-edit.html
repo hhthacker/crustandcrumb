@@ -16,8 +16,9 @@
         <label>Order in Recipe</label>
         <input type="number" class="form-control" placeholder="Order in Recipe" ng-model="newStep.order" />
     </div>
-    <button class="btn btn-default" ng-click="addNewStep(newStep.bread_id)">Save Step</button>
-    <button class="btn btn-default" ng-click="deleteOneStep()">Delete Step</button>
+    <button class="btn btn-default" ng-click="saveStepEdit(newStep.id)" ng-show="editMode">Save Edit</button>
+    <button class="btn btn-default" ng-click="addNewStep(newStep.id)" ng-hide="editMode">Save Step</button>
+    <button class="btn btn-default" ng-click="deleteOneStep(newStep.id)" ng-show="editMode">Delete Step</button>
 </form>
 
 <h1>Recipe</h1>

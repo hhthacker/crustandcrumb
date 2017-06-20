@@ -24,7 +24,7 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/steps/${recipeid}.json`)
                 .then((resultz) => {
-                    resultz.data.recipeid = recipeid;
+                    resultz.data.id = recipeid;
                     resolve(resultz);
                 }).catch((error) => {
                     reject(error);
@@ -35,11 +35,11 @@ app.factory("RecipeFactory", function($http, $q, FIREBASE_CONFIG) {
     let postNewStep = (newStep) => {
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/steps.json`, JSON.stringify(newStep))
-                .then((resultz) => {
-                    resolve(resultz);
-                }).catch((error) => {
-                    reject(error);
-                });
+            .then((resultz) => {
+                resolve(resultz);
+            }).catch((error) => {
+                reject(error);
+            });
         });
     };
 
