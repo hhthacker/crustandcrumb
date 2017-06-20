@@ -30,4 +30,16 @@ app.controller("BreadViewCtrl", function($routeParams, $rootScope, $scope, Bread
         });
     };
     getSteps();
+
+        // drag and drop of steps
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    dragula([$('drag-elements')], {
+        revertOnSpill: true
+    });
+
 });
+
+
