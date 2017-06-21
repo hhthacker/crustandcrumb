@@ -18,9 +18,6 @@ body {
 p {
   color: #AAAAAA; }
 
-
-  /*Styling from http://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple*/
-
 div[dnd-list] {
   min-height: 42px;
   padding-left: 0px; }
