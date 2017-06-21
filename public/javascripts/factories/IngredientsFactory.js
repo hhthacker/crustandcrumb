@@ -25,7 +25,6 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredientid}.json`)
                 .then((resultz) => {
-                    console.log("getsingleingredient", resultz);
                     resultz.data.id = ingredientid;
                     resolve(resultz);
                 }).catch((error) => {

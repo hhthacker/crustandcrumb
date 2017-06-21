@@ -4,7 +4,6 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
     $scope.editMode = true;
 
     IngredientsFactory.getSingleIngredient($routeParams.ingredientid).then((results) => {
-        console.log("get single step results", results);
         $scope.newIngredient = results.data;
     }).catch((error) => {
         console.log("getSingleIngredient", error);
@@ -12,7 +11,6 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
 
     $scope.saveIngredientEdit = (id) => {
         IngredientsFactory.editIngredient($scope.newIngredient).then(() => {
-            console.log("new ingredient", $scope.newIngredient);
             $location.url(`bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("edit ingredient", error);
@@ -21,7 +19,6 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
 
     $scope.deleteOneIngredient = () => {
         IngredientsFactory.deleteIngredient($routeParams.ingredientid).then(() => {
-            console.log("delete ingredient ctrl", $routeParams.ingredientid);
             $location.url(`/bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("delete one ingredient", error);
@@ -33,7 +30,6 @@ app.controller("IngredientsEditCtrl", function($location, $routeParams, $scope, 
     let getIngredients = () => {
         IngredientsFactory.getIngredientList($routeParams.breadid).then((ingredientz) => {
             $scope.ingredients = ingredientz;
-            console.log("ingredients", $scope.ingredients);
         }).catch((error) => {
             console.log("get Error", error);
         });

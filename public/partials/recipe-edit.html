@@ -22,8 +22,6 @@
 </form>
 <h1>Recipe</h1>
 <h3>Reorder Steps</h3>
-<!-- <button class="btn btn-default" ng-click="saveReorder($index)">Save Ordering</button> -->
-<!-- <div class="container left" id="drag-elements" dragula-model="steps" dragula="'first-bag'"> -->
     <div dnd-list="steps">
     <div ng-repeat="step in steps" dnd-draggable="step" dnd-moved="steps.splice($index, 1)"
         dnd-effect-allowed="move"
