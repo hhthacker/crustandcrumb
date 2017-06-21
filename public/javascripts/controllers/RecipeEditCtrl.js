@@ -32,6 +32,7 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
     let getSteps = () => {
         RecipeFactory.getRecipeList($routeParams.breadid).then((stepz) => {
             $scope.steps = stepz;
+            $scope.stepslength = $scope.steps.length;
             console.log("steps", $scope.steps);
         }).catch((error) => {
             console.log("get error", error);
@@ -40,17 +41,20 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
 
     getSteps();
 
-    $scope.saveReorder = (index) => {
-        console.log("index", index);
-    };
-
-    // drag and drop of steps
-    function $(id) {
-        return document.getElementById(id);
-    }
-    dragula([$('drag-elements')], {
-        revertOnSpill: true
-    });
+    // // drag and drop of steps
+    $scope.$watch('steps', function(steps) {
+        if (steps.length == $scope.stepslength){
+                console.log("steps list", steps);
+                for (var i = 0; i < steps.length; i++) {
+                    steps[i].order = i;
+                    RecipeFactory.editStep(steps[i]).then(() => {
+                        console.log("edited step order");
+                    }).catch((error) => {
+                        console.log("edited step error", error);
+                    });
+                }
+        }
+    }, true);
 
 
 });
