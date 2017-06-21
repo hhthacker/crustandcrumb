@@ -22,11 +22,13 @@
 </form>
 <h1>Recipe</h1>
 <h3>Reorder Steps</h3>
-<button class="btn btn-default" ng-click="saveReorder($index)">Save Ordering</button>
-<div class="container left" id="drag-elements" dragula-model="steps" dragula="'first-bag'">
-    <div ng-repeat="step in steps track by $index" class="drag-item">
+    <div dnd-list="steps">
+    <div ng-repeat="step in steps" dnd-draggable="step" dnd-moved="steps.splice($index, 1)"
+        dnd-effect-allowed="move"
+        dnd-selected="models.selected = step"
+        ng-class="{'selected': models.selected === step}">
         <div class="panel panel-default opacity col-xs-10">
-            <div class="panel-body">{{$index}}
+            <div class="panel-body">
                 <a ng-href="#!/bread/{{step.bread_id}}/recipe/{{step.id}}">{{step.name}} {{step.details}}</a>
             </div>
         </div>

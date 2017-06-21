@@ -7,8 +7,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
-                <li><a href="#!/bread/list">Breads</a></li>
-                <li><a href="#!/bread/new">Add</a></li>
+                <li><a href="#!/bread/list">Bread List</a></li>
+                <li><a href="#!/bread/new">Add Bread</a></li>
+                <li><a href="#!/logout">Logout</a></li>
             </ul>
                 <ul class="nav navbar-nav navbar-right" ng-if="!user.uid">
                 <li><a href="#!/auth">Authenticate</a></li>

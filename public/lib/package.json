@@ -18,6 +18,7 @@
     "matchdep": "^1.0.1"
   },
   "dependencies": {
+    "angular-drag-and-drop-lists": "^2.1.0",
     "angularjs-dragula": "^1.2.8"
   }
 }

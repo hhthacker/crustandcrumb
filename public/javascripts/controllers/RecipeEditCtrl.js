@@ -3,7 +3,6 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
     $scope.editMode = true;
 
     RecipeFactory.getSingleStep($routeParams.recipeid).then((results) => {
-        console.log("results", results);
         $scope.newStep = results.data;
     }).catch((error) => {
         console.log("getSingleStep", error);
@@ -11,7 +10,6 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
 
     $scope.saveStepEdit = (id) => {
         RecipeFactory.editStep($scope.newStep).then(() => {
-            console.log("edit step", $scope.newStep);
             $location.url(`bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("edit step", error);
@@ -20,7 +18,6 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
 
     $scope.deleteOneStep = () => {
         RecipeFactory.deleteStep($routeParams.recipeid).then(() => {
-            console.log("delete step ctrl", $routeParams.recipeid);
             $location.url(`/bread/view/${$routeParams.breadid}`);
         }).catch((error) => {
             console.log("delete one step", error);
@@ -32,7 +29,7 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
     let getSteps = () => {
         RecipeFactory.getRecipeList($routeParams.breadid).then((stepz) => {
             $scope.steps = stepz;
-            console.log("steps", $scope.steps);
+            $scope.stepslength = $scope.steps.length;
         }).catch((error) => {
             console.log("get error", error);
         });
@@ -40,17 +37,18 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
 
     getSteps();
 
-    $scope.saveReorder = (index) => {
-        console.log("index", index);
-    };
-
-    // drag and drop of steps
-    function $(id) {
-        return document.getElementById(id);
-    }
-    dragula([$('drag-elements')], {
-        revertOnSpill: true
-    });
+    // // drag and drop of steps
+    $scope.$watch('steps', function(steps) {
+        if (steps.length == $scope.stepslength){
+                for (var i = 0; i < steps.length; i++) {
+                    steps[i].order = i;
+                    RecipeFactory.editStep(steps[i]).then(() => {
+                    }).catch((error) => {
+                        console.log("edited step error", error);
+                    });
+                }
+        }
+    }, true);
 
 
 });

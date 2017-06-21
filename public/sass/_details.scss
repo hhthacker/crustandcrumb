@@ -24,3 +24,23 @@ body {
 p {
 	color: $gray;
 }
+
+
+div[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+div[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+div[dnd-list] .dndPlaceholder {
+    background-color: #ddd;
+    display: block;
+    min-height: 42px;
+}
+div[dnd-list] div.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
