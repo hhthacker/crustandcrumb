@@ -45,14 +45,14 @@ app.factory("IngredientsFactory", function($http, $q, FIREBASE_CONFIG) {
         });
     };
 
-    let editIngredient = (ingredient) => {
+    let editIngredient = (newIngredient) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/ingredients/${ingredient.id}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/ingredients/${newIngredient.id}.json`,
                 JSON.stringify({
-                    name: ingredient.name,
-                    amount: ingredient.amount,
-                    unit: ingredient.unit,
-                    bread_id: ingredient.bread_id
+                    name: newIngredient.name,
+                    amount: newIngredient.amount,
+                    unit: newIngredient.unit,
+                    bread_id: newIngredient.bread_id
                 })
             ).then((resultz) => {
                 resolve(resultz);
