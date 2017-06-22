@@ -1,8 +1,5 @@
 app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, UserFactory) {
-	$scope.auth = {
-		email: "apple@apple.com",
-		password: "111111"
-	};
+	$scope.auth = {};
 
 	let logMeIn = () => {
 		AuthFactory.authenticate($scope.auth).then((userCreds) => {
