@@ -1,46 +1,53 @@
 @import "colors";
 
 h1 {
-	color: $teal;
+	color: $purple;
 }
 
 h2 {
-	color: $silver;
+	color: $dirtpurple;
 }
 
 h3 {
-	color: $yellow;
+	color: $teal;
 }
 
 body {
 	width: 100%;
    	height: 100%;
-	background: url("https://images5.alphacoders.com/403/403525.jpg");
-	background-attachment: fixed;
-	background-position: center center;
-	background-size: cover; 
+	background: url("https://lh3.googleusercontent.com/-fDMmTlVQ8o8/U2lgxKP9SII/AAAAAAAAAhI/EBolw_sl77o/w400-h200/tumblr_n47u6rDPJ31qzd1ybo2_400_zps43dd2d89.png")bottom right no-repeat; 
+	background-attachment:fixed;
+}
+
+a {
+	text-decoration: none;
+	color: $crust;
+	font-size: 1.1em
+}
+
+a:hover {
+    text-decoration: none;
+    color: $orange;
+    font-size: 1.2em;
 }
 
 p {
-	color: $gray;
+	color: $wheat;
 }
 
-
-div[dnd-list] {
-    min-height: 42px;
-    padding-left: 0px;
+label {
+	color: $yolk;
 }
 
-div[dnd-list] .dndDraggingSource {
-    display: none;
+button {
+	background-color: $dirtpurple;
+	border-color: $purple;
 }
 
-div[dnd-list] .dndPlaceholder {
-    background-color: #ddd;
-    display: block;
-    min-height: 42px;
-}
-div[dnd-list] div.selected {
-    background-color: #dff0d8;
-    color: #3c763d;
+.jumbotron {
+	width: 80%;
+	opacity: 90%;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
