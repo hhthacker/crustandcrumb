@@ -1,5 +1,5 @@
 <form class="col-xs-8 col-xs-offset-2">
-<h1>Add Step</h1>
+    <h1>Add Step</h1>
     <div class="form-group">
         <input type="text" class="form-control col-xs-6" placeholder="Step Name" ng-model="newStep.name" />
     </div>
@@ -16,17 +16,13 @@
     <button class="btn btn-lg col-xs-6" ng-click="addNewStep(newStep.id)" ng-hide="editMode">Save Step</button>
     <button class="btn btn-lg col-xs-6" ng-click="deleteOneStep(newStep.id)" ng-show="editMode">Delete Step</button>
 </form>
-<h1>Recipe</h1>
-<h3>Reorder Steps</h3>
+<div class="clearfix panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">Recipe</h3>
+        <h3>Reorder Steps</h3>
+    </div>
     <div dnd-list="steps">
-    <div ng-repeat="step in steps" dnd-draggable="step" dnd-moved="steps.splice($index, 1)"
-        dnd-effect-allowed="move"
-        dnd-selected="models.selected = step"
-        ng-class="{'selected': models.selected === step}">
-        <div class="panel panel-default col-xs-10">
-            <div class="panel-body">
-                <a ng-href="#!/bread/{{step.bread_id}}/recipe/{{step.id}}">{{step.name}} {{step.details}}</a>
-            </div>
+        <div ng-repeat="step in steps" dnd-draggable="step" dnd-moved="steps.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = step" ng-class="{'selected': models.selected === step}" class="nopadboxes panel-body col-xs-10">
+            <a ng-href="#!/bread/{{step.bread_id}}/recipe/{{step.id}}">{{step.name}} {{step.details}}</a>
         </div>
     </div>
-</div>

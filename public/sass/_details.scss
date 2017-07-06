@@ -44,10 +44,18 @@ button {
 	border-color: $purple;
 }
 
+.descriptions {
+	border: 3px solid teal;
+	margin-top: 50px;
+}
 .jumbotron {
 	width: 80%;
 	opacity: 90%;
 	border-radius: 4px;
 	border: 1px solid transparent;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.nopadboxes {
+	padding-bottom: 0px;
 }
