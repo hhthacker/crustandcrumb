@@ -1,20 +1,18 @@
-<h1>Breads by Kilograms</h1>
-<div ng-repeat="bread in breads | filter: {by_loaf: false}">
-    <div class="panel panel-default opacity">
-        <div class="panel-body">
-            <div class="col-xs-7">
-                <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>
-            </div>
-        </div>
+<div class="clearfix panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title text-center">breads by kilograms</h3>
+    </div>
+    <div ng-repeat="bread in breads | filter: {by_loaf: false}" class="clearfix panel-body col-xs-4">
+        <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>
     </div>
 </div>
-<h3>Scale by Loaf</h3>
-<div ng-repeat="bread in breads | filter: {by_loaf: true}">
-    <div class="panel panel-default opacity">
-        <div class="panel-body">
-            <div class="col-xs-7">
-                <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>
-            </div>
-        </div>
+
+
+<div class="clearfix panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title text-center">breads by loaf</h3>
+    </div>
+    <div ng-repeat="bread in breads | filter: {by_loaf: true}" class="clearfix panel-body col-xs-4">
+        <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>
     </div>
 </div>

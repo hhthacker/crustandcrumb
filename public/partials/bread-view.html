@@ -1,34 +1,38 @@
-<h2>Bread: {{selectedBread.name}}</h2>
-<button class="btn btn-danger"><a ng-href="#!/bread/edit/{{selectedBread.breadid}}">Edit {{selectedBread.name}}</a></button>
-<h3 ng-show="!selectedBread.by_loaf">Recipe scaled by kilograms</h3>
-<h3 ng-show="selectedBread.by_loaf">Recipe scaled by loaf</h3>
-<h3>Description: {{selectedBread.description}}</h3>
-<h1>Ingredients</h1>
-<button class="btn btn-warning"><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/new">Add New Ingredient</a></button>
-<div>
-    <input type="number" class="form-control" placeholder="1" ng-model="multiplyFactor" />
+<div class="col-xs-6 col-xs-offset-3 descriptions text-center">
+    <h1>{{selectedBread.name}}</h1>
+    <p class="col-xs-6">{{selectedBread.description}}</p>
+    <p class="col-xs-6" ng-show="!selectedBread.by_loaf">recipe scaled by kilograms</p>
+    <p class="col-xs-6" ng-show="selectedBread.by_loaf">recipe scaled by loaf</p>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/edit/{{selectedBread.breadid}}">edit {{selectedBread.name}}</a></button>
 </div>
-<div ng-repeat="ingredient in ingredients">
-    <div class="panel panel-default opacity col-xs-3">
-        <div class="panel-body">
-            <div>
-                <div>{{ingredient.amount * (multiplyFactor || 1) | number:3}} {{ingredient.unit}} </div>
-                <a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
+<div class="col-xs-10 col-xs-offset-1 descriptions text-center">
+    <h1>ingredients</h1>
+    <label class="col-xs-3">multipy by:
+        <input type="number" class="form-control col-xs-3" placeholder="1" ng-model="multiplyFactor" />
+    </label>
+    <div ng-repeat="ingredient in ingredients">
+        <div class="panel panel-default col-xs-3">
+            <div class="panel-body">
+                <div>
+                    <div>{{ingredient.amount * (multiplyFactor || 1) | number:3}} {{ingredient.unit}} </div>
+                    <a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
+                </div>
             </div>
         </div>
     </div>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/new">add ingredient</a></button>
 </div>
-</div>
-<br>
-<h1>Recipe</h1>
-<button class="btn btn-warning"><a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/new">Add New Step</a></button>
-<div ng-repeat="step in steps | orderBy:'order'">
-    <div class="panel panel-default opacity col-xs-10">
-        <div class="panel-body">
-            <div>
-                <h3>{{step.order}}</h3>
-                <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}"> {{step.name}} {{step.details}}</a>
+<div class="col-xs-10 col-xs-offset-1 descriptions text-center">
+    <h1>recipe</h1>
+    <div ng-repeat="step in steps | orderBy:'order'">
+        <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class="col-xs-12">{{step.order}}</p>
+                    {{step.name}} {{step.details}}
+                </div>
             </div>
-        </div>
+        </a>
     </div>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/new">add step</a></button>
 </div>

@@ -1,12 +1,18 @@
-<h1>new bread</h1>
-<form>
-	<div class="form-group">
-	<label>Bread Name</label>
-	<input type="text" class="form-control" placeholder="Some Bread" ng-model="newBread.name"/>
-	</div>
-	<div class="form-group">
-	<label>Description</label>
-	<input type="text" class="form-control" placeholder="Bread Description" ng-model="newBread.description" />
-	</div>
-	<button class="btn btn-default" ng-click="addNewBread()">Add Bread</button>
+<form class="col-xs-8 col-xs-offset-2">
+    <h1>new bread</h1>
+    <div class="form-group">
+        <label>bread name</label>
+        <input type="text" class="form-control" placeholder="Label me!" ng-model="newBread.name" />
+    </div>
+    <div class="form-group">
+        <label>description</label>
+        <input type="text" class="form-control" placeholder="What's it like?" ng-model="newBread.description" />
+    </div>
+    <label class="col-xs-4">scale by kilograms
+        <input for="kg" type="radio" class="form-control" ng-model="newBread.by_loaf" ng-value="false"/>
+    </label>
+    <label for="loaf" class="col-xs-4">scale by loaf</label>
+
+        <input type="radio" class="form-control" ng-model="newBread.by_loaf" ng-value="true" id="loaf" />
+    <button class="btn btn-lg col-xs-6 col-xs-offset-3" ng-click="addNewBread()">add bread</button>
 </form>

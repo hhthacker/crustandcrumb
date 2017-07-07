@@ -1,16 +1,13 @@
-<h1>bread edit</h1>
-
-<form>
-	<div class="form-group">
-	<label>Bread Name</label>
-	<input type="text" class="form-control" placeholder="Some Bread" ng-model="newBread.name"/>
-	</div>
-	<div class="form-group">
-	<label>Description</label>
-	<input type="text" class="form-control" placeholder="Bread Description" ng-model="newBread.description" />
-	</div>
-	<button class="btn btn-default" ng-click="saveBreadEdit(newBread.breadid)">Save Bread</button>
-	<button class="btn btn-default" ng-click="deleteWholeLoaf(newBread.breadid)">Delete Bread</button>
-
+<form class="col-xs-6 col-xs-offset-3">
+    <h1>edit bread</h1>
+    <div class="form-group">
+        <label>Bread Name</label>
+        <input type="text" class="form-control" placeholder="Some Bread" ng-model="newBread.name" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="Bread Description" ng-model="newBread.description" />
+    </div>
+    <button class="btn btn-lg col-xs-6" ng-click="saveBreadEdit(newBread.breadid)">Save Bread</button>
+    <button class="btn btn-lg col-xs-6" ng-click="deleteWholeLoaf(newBread.breadid)">Delete Bread</button>
 </form>
-

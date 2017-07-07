@@ -43,6 +43,7 @@ app.controller("RecipeEditCtrl", function($location, $routeParams, $scope, Recip
                 for (var i = 0; i < steps.length; i++) {
                     steps[i].order = i;
                     RecipeFactory.editStep(steps[i]).then(() => {
+                        console.log("steps", steps);
                     }).catch((error) => {
                         console.log("edited step error", error);
                     });

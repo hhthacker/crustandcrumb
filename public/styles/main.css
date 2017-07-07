@@ -1,38 +1,49 @@
 h1 {
-  color: #39CCCC; }
+  color: #8A00C4; }
 
 h2 {
-  color: #DDDDDD; }
+  color: #9E81AA; }
 
 h3 {
-  color: #FFDC00; }
+  color: #92F8C9; }
 
 body {
   width: 100%;
   height: 100%;
-  background: url("https://images5.alphacoders.com/403/403525.jpg");
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover; }
+  background: url("https://lh3.googleusercontent.com/-fDMmTlVQ8o8/U2lgxKP9SII/AAAAAAAAAhI/EBolw_sl77o/w400-h200/tumblr_n47u6rDPJ31qzd1ybo2_400_zps43dd2d89.png") bottom right no-repeat;
+  background-attachment: fixed; }
+
+a {
+  text-decoration: none;
+  color: #f29601;
+  font-size: 1.1em; }
+
+a:hover {
+  text-decoration: none;
+  color: #d79735; }
 
 p {
-  color: #AAAAAA; }
+  color: #ecd3a5; }
 
+label {
+  color: #f7b52c; }
 
-  /*Styling from http://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple*/
+button {
+  background-color: #9E81AA;
+  color: #ecd3a5; }
 
-div[dnd-list] {
-  min-height: 42px;
-  padding-left: 0px; }
+.descriptions {
+  border: 3px solid teal;
+  margin-top: 50px; }
 
-div[dnd-list] .dndDraggingSource {
-  display: none; }
+.homepage {
+  background: linear-gradient(45deg, #f29601, #9E81AA); }
 
-div[dnd-list] .dndPlaceholder {
-  background-color: #ddd;
-  display: block;
-  min-height: 42px; }
+.panel {
+  opacity: 0.9; }
 
-div[dnd-list] div.selected {
-  background-color: #dff0d8;
-  color: #3c763d; }
+form {
+  z-index: 10000; }
+
+.nopadboxes {
+  padding-bottom: 0px; }
