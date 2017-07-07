@@ -10,7 +10,7 @@
     <timer countdown="100" interval="1000">
         <p>{{countdown}} second{{secondsS}}</p>
         <div class="progress active {{displayProgressActive}}">
-            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{progressBar}}%">{{progressBar}}% {{displayProgressActive}}
+            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{progressBar}}%">{{progressBar}}% 
             </div>
         </div>
     </timer>
@@ -38,8 +38,8 @@
         <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="col-xs-12">{{step.order}}</p>
-                    {{step.name}} {{step.details}}
+                    <p class="col-xs-2">{{step.order}}</p>
+                    <p class="col-xs-10">{{step.name}} {{step.details}}</p>
                 </div>
             </div>
         </a>

@@ -47,3 +47,12 @@ form {
 
 .nopadboxes {
   padding-bottom: 0px; }
+
+.form-group {
+  position: relative; }
+
+.static-value {
+  right: 10px;
+  font-size: 0.9em;
+  color: #f7b52c;
+  top: 9px; }
