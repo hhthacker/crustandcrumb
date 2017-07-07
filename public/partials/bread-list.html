@@ -1,6 +1,6 @@
 <div class="clearfix panel panel-warning">
     <div class="panel-heading">
-        <h3 class="panel-title">Breads by Kilograms</h3>
+        <h3 class="panel-title text-center">breads by kilograms</h3>
     </div>
     <div ng-repeat="bread in breads | filter: {by_loaf: false}" class="clearfix panel-body col-xs-4">
         <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>
@@ -10,7 +10,7 @@
 
 <div class="clearfix panel panel-warning">
     <div class="panel-heading">
-        <h3 class="panel-title">Breads by Loaf</h3>
+        <h3 class="panel-title text-center">breads by loaf</h3>
     </div>
     <div ng-repeat="bread in breads | filter: {by_loaf: true}" class="clearfix panel-body col-xs-4">
         <a ng-href="#!/bread/view/{{bread.id}}">{{bread.name}}</a>

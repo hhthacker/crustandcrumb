@@ -1,12 +1,12 @@
 <div class="col-xs-6 col-xs-offset-3 descriptions text-center">
     <h1>{{selectedBread.name}}</h1>
     <p class="col-xs-6">{{selectedBread.description}}</p>
-    <p class="col-xs-6" ng-show="!selectedBread.by_loaf">Recipe scaled by kilograms</p>
-    <p class="col-xs-6" ng-show="selectedBread.by_loaf">Recipe scaled by loaf</p>
-    <button class="btn btn-lg col-xs-6 col-xs-offset-3"><a ng-href="#!/bread/edit/{{selectedBread.breadid}}">edit {{selectedBread.name}}</a></button>
+    <p class="col-xs-6" ng-show="!selectedBread.by_loaf">recipe scaled by kilograms</p>
+    <p class="col-xs-6" ng-show="selectedBread.by_loaf">recipe scaled by loaf</p>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/edit/{{selectedBread.breadid}}">edit {{selectedBread.name}}</a></button>
 </div>
-<div class="col-xs-10 col-xs-offset-1 descriptions text-left">
-    <h1>Ingredients</h1>
+<div class="col-xs-10 col-xs-offset-1 descriptions text-center">
+    <h1>ingredients</h1>
     <label class="col-xs-3">multipy by:
         <input type="number" class="form-control col-xs-3" placeholder="1" ng-model="multiplyFactor" />
     </label>
@@ -20,19 +20,19 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-lg col-xs-6 col-xs-offset-3"><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/new">add ingredient</a></button>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/new">add ingredient</a></button>
 </div>
 <div class="col-xs-10 col-xs-offset-1 descriptions text-center">
     <h1>recipe</h1>
-    <button class="btn btn-lg col-xs-4 col-xs-offset-4"><a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/new">add step</a></button>
     <div ng-repeat="step in steps | orderBy:'order'">
         <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">
-            <div class="panel panel-default opacity col-xs-10">
+            <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="col-xs-">{{step.order}}</p>
+                    <p class="col-xs-12">{{step.order}}</p>
                     {{step.name}} {{step.details}}
                 </div>
             </div>
         </a>
     </div>
+    <button class="btn col-xs-10 col-xs-offset-1"><a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/new">add step</a></button>
 </div>
