@@ -8,10 +8,12 @@
         <input type="text" class="form-control" placeholder="What's it like?" ng-model="newBread.description" />
         <label>description</label>
     </div>
-    <label for="kg" class="col-xs-12">
-        <input for="kg" type="radio" class="form-check-input" ng-model="newBread.by_loaf" ng-value="false" /> scale by kilograms
-    </label>
-    <label for="loaf" class="col-xs-12">
-        <input type="radio" class="form-check-input" ng-model="newBread.by_loaf" ng-value="true" id="loaf" /> scale by loaf</label>
-    <button class="btn btn-lg col-xs-6 col-xs-offset-3" ng-click="addNewBread()">add bread</button>
+    <div class="form-group">
+        <label for="kg" class="col-xs-12">
+            <input for="kg" type="radio" class="form-check-input" ng-model="newBread.by_loaf" ng-value="false" /> scale by kilograms
+        </label>
+        <label for="loaf" class="col-xs-12">
+            <input type="radio" class="form-check-input" ng-model="newBread.by_loaf" ng-value="true" id="loaf" /> scale by loaf</label>
+        <button class="btn btn-lg col-xs-6 col-xs-offset-3" ng-click="addNewBread()">add bread</button>
+    </div>
 </form>

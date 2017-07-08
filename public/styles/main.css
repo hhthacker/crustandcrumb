@@ -7,6 +7,27 @@ h2 {
 h3 {
   color: #92F8C9; }
 
+p {
+  color: #ecd3a5; }
+
+label {
+  color: #f7b52c; }
+
+h1 {
+  color: #8A00C4; }
+
+h2 {
+  color: #9E81AA; }
+
+h3 {
+  color: #92F8C9; }
+
+p {
+  color: #ecd3a5; }
+
+label {
+  color: #f7b52c; }
+
 body {
   width: 100%;
   height: 100%;
@@ -22,12 +43,6 @@ a:hover {
   text-decoration: none;
   color: #d79735; }
 
-p {
-  color: #ecd3a5; }
-
-label {
-  color: #f7b52c; }
-
 button {
   background-color: #9E81AA;
   color: #ecd3a5; }
@@ -37,7 +52,8 @@ button {
   margin-top: 50px; }
 
 .homepage {
-  background: linear-gradient(45deg, #f29601, #9E81AA); }
+  background: linear-gradient(45deg, #f29601, #9E81AA);
+  opacity: 0.65; }
 
 .panel {
   opacity: 0.9; }
@@ -51,8 +67,20 @@ form {
 .form-group {
   position: relative; }
 
-.static-value {
-  right: 10px;
-  font-size: 0.9em;
-  color: #f7b52c;
-  top: 9px; }
+div[dnd-list] .dndDraggingSource {
+  display: none; }
+
+div[dnd-list] .dndPlaceholder {
+  background-color: #9E81AA;
+  display: block;
+  min-height: 45px; }
+
+div[dnd-list] div.selected {
+  background-color: #8A00C4;
+  color: #f7b52c; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Libre Baskerville", serif; }
+
+p, a, label, input {
+  font-family: "Amiko", sans-serif; }

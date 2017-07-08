@@ -1,17 +1,5 @@
 @import "colors";
 
-h1 {
-	color: $purple;
-}
-
-h2 {
-	color: $dirtpurple;
-}
-
-h3 {
-	color: $teal;
-}
-
 body {
 	width: 100%;
    	height: 100%;
@@ -30,14 +18,6 @@ a:hover {
     color: $orange;
 }
 
-p {
-	color: $wheat;
-}
-
-label {
-	color: $yolk;
-}
-
 button {
 	background-color: $dirtpurple;
 	color: $wheat;
@@ -50,6 +30,7 @@ button {
 
 .homepage {
 	background: linear-gradient(45deg, $crust, $dirtpurple);
+	opacity: 0.65;
 }
 
 .panel {
@@ -68,9 +49,17 @@ form {
 	position: relative;
 }
 
-.static-value {
-	right: 10px;
-	font-size: 0.9em;
+div[dnd-list] .dndDraggingSource {
+	display: none;
+}
+
+div[dnd-list] .dndPlaceholder {
+	background-color: $dirtpurple;
+	display: block;
+	min-height: 45px
+}
+
+div[dnd-list] div.selected {
+	background-color: $purple;
 	color: $yolk;
-	top: 9px;
 }

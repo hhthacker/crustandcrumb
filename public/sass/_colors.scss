@@ -3,7 +3,26 @@ $yolk: #f7b52c;
 $wheat: #ecd3a5;
 $crust: #f29601;
 $orange: #d79735;
-
 $teal: #92F8C9;
 $purple: #8A00C4;
 $dirtpurple: #9E81AA;
+
+h1 {
+	color: $purple;
+}
+
+h2 {
+	color: $dirtpurple;
+}
+
+h3 {
+	color: $teal;
+}
+
+p {
+	color: $wheat;
+}
+
+label {
+	color: $yolk;
+}

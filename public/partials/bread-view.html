@@ -17,15 +17,14 @@
 </div>
 <div class="col-xs-10 col-xs-offset-1 descriptions text-center">
     <h1>ingredients</h1>
-    <label class="col-xs-3">multipy by:
-        <input type="number" class="form-control col-xs-3" placeholder="1" ng-model="multiplyFactor" />
+    <label class="col-xs-6">multipy by:
+        <input type="number" class="form-control col-xs-6" placeholder="1" ng-model="multiplyFactor" />
     </label>
     <div ng-repeat="ingredient in ingredients">
-        <div class="panel panel-default col-xs-3">
+        <div class="panel panel-default col-xs-6">
             <div class="panel-body">
                 <div>
-                    <div>{{ingredient.amount * (multiplyFactor || 1) | number:3}} {{ingredient.unit}} </div>
-                    <a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.name}}</a>
+                    <div><a ng-href="#!/bread/{{selectedBread.breadid}}/ingredients/{{ingredient.id}}">{{ingredient.amount * (multiplyFactor || 1) | number:3}} {{ingredient.unit}} {{ingredient.name}}</a></div>
                 </div>
             </div>
         </div>
@@ -38,7 +37,7 @@
         <a ng-href="#!/bread/{{selectedBread.breadid}}/recipe/{{step.id}}">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p class="col-xs-2">{{step.order}}</p>
+                    <h2 class="col-xs-2">{{step.order + 1}}</h2>
                     <p class="col-xs-10">{{step.name}} {{step.details}}</p>
                 </div>
             </div>

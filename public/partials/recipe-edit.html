@@ -2,19 +2,19 @@
     <h1 class="text-center">add step</h1>
     <div class="form-group">
         <input type="text" class="form-control col-xs-6" placeholder="Step Name" ng-model="newStep.name" id="stepname" />
-        <label for="stepname" class="static-value">title</label>
+        <label for="stepname">title</label>
     </div>
     <div class="form-group">
         <input type="text" class="form-control col-xs-6" placeholder="Details" ng-model="newStep.details" id="stepdetails"/>
-        <label for="stepdetails" class="static-value">details</label>
+        <label for="stepdetails">details</label>
     </div>
     <div class="form-group">
         <input type="number" class="form-control col-xs-6" placeholder="duration" ng-model="newStep.duration_minutes" id="stepminutes" />
-        <label for="stepminutes" class="static-value">minutes</label>
+        <label for="stepminutes">minutes</label>
     </div>
     <div class="form-group">
         <input type="number" class="form-control col-xs-6" placeholder="order in recipe" ng-model="newStep.order" id="steporder" />
-        <label for="steporder" class="static-value">order</label>
+        <label for="steporder">order</label>
     </div>
     <button class="btn btn-lg col-xs-6" ng-click="saveStepEdit(newStep.id)" ng-show="editMode">save edit</button>
     <button class="btn btn-lg col-xs-12" ng-click="addNewStep(newStep.id)" ng-hide="editMode">save step</button>
@@ -27,7 +27,7 @@
     </div>
     <div dnd-list="steps">
         <div ng-repeat="step in steps" dnd-draggable="step" dnd-moved="steps.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = step" ng-class="{'selected': models.selected === step}" class="nopadboxes panel-body col-xs-10">
-            <div class="col-xs-2"><h2>{{step.order}}</h2></div>
+            <div class="col-xs-2"><h2>{{step.order + 1}}</h2></div>
             <a ng-href="#!/bread/{{step.bread_id}}/recipe/{{step.id}}" class="col-xs-10"><h4>{{step.name}}</h4> {{step.details}}</a>
         </div>
     </div>
