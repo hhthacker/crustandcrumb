@@ -5,5 +5,3 @@
 * AngularJS
 * Sass
 * Firebase
-## contributors
-[Heather Thacker](github.com/hhthacker)
